@@ -1,0 +1,19 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: https://eurekaservice-irdxkioj.cfapps.io/eureka
+
+server:
+  port: 8079
+
+
+zuul: 
+  routes: 
+    employee-producer_employee2:
+      path: /employee2
+      strip-prefix: false
+      service-id: employee-producer
+    employee-producer_employee1:
+      path: /employee1
+      strip-prefix: false
+      service-id: employee-producer
